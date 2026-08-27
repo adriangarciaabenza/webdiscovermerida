@@ -16,6 +16,17 @@ orientativas y no sustituyen la información práctica de cada institución.
 - **Museo Nacional de Arte Romano:** museo dedicado a conservar, investigar y
   divulgar piezas relacionadas con la ciudad romana y su territorio.
 
+## Enlaces oficiales
+
+Los destinos se comprobaron el 27 de agosto de 2026 y apuntan al apartado de
+monumentos del Consorcio de la Ciudad Monumental de Mérida:
+
+- **Teatro Romano:** https://www.consorciomerida.org/conjunto/monumentos/teatro
+- **Anfiteatro Romano:** https://www.consorciomerida.org/conjunto/monumentos/anfiteatro
+- **Puente Romano:** https://www.consorciomerida.org/conjunto/monumentos/puenteromanoGuadiana
+- **Acueducto de los Milagros:** https://www.consorciomerida.org/conjunto/monumentos/losmilagros
+- **Museo Nacional de Arte Romano:** https://www.consorciomerida.org/conjunto/monumentos/museoarteromano
+
 ## Fuentes consultadas
 
 - Consorcio de la Ciudad Monumental de Mérida, [Conjunto monumental](https://www.consorciomerida.org/conjunto)

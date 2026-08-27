@@ -39,3 +39,22 @@ def test_merida_page_contains_visit_guide_and_local_images():
     assert response.data.count(b"/static/images/") == 6
     assert b".jpg" in response.data
     assert response.data.count(b"alt=") >= 6
+
+
+def test_merida_page_links_each_place_to_the_official_site():
+    with app.test_client() as client:
+        response = client.get("/merida")
+
+    official_urls = (
+        b"https://www.consorciomerida.org/conjunto/monumentos/teatro",
+        b"https://www.consorciomerida.org/conjunto/monumentos/anfiteatro",
+        b"https://www.consorciomerida.org/conjunto/monumentos/puenteromanoGuadiana",
+        b"https://www.consorciomerida.org/conjunto/monumentos/losmilagros",
+        b"https://www.consorciomerida.org/conjunto/monumentos/museoarteromano",
+    )
+
+    assert response.status_code == 200
+    for url in official_urls:
+        assert response.data.count(url) == 1
+    assert response.data.count(b'target="_blank"') == 5
+    assert response.data.count(b'rel="noopener noreferrer"') == 5
