@@ -54,6 +54,12 @@ Con el entorno virtual activado, ejecuta:
 El archivo `tests/test_app.py` verifica las rutas `/` y `/merida`, el enlace de
 navegacion, los lugares destacados y las imagenes locales.
 
+## Despliegue en Render
+
+El archivo `render.yaml` configura un Web Service Python. Render instala las
+dependencias con `pip install -r requirements.txt` y arranca Flask mediante
+Gunicorn en el puerto que proporciona la variable `PORT`.
+
 ## Estructura y alcance
 
 - `app.py`: crea la aplicacion Flask y define la ruta `/`.
