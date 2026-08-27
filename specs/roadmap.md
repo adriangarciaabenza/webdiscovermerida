@@ -239,6 +239,8 @@ de visita, especialmente en conexiones moviles.
   destacada, para evitar composiciones desalineadas.
 - [x] Separar visualmente la caja de imagen y la caja de texto para impedir que
   una imagen tape el contenido de la tarjeta.
+- [x] Versionar la URL de la hoja de estilos cuando cambia la maquetacion para
+  evitar que el cache de larga duracion conserve reglas antiguas.
 - [ ] Generar versiones WebP o AVIF manteniendo una alternativa JPEG.
 - [ ] Generar varias resoluciones y declararlas mediante `srcset` y `sizes`.
 - [ ] Comprimir las imagenes y verificar el peso total transferido desde las
