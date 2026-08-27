@@ -235,6 +235,8 @@ de visita, especialmente en conexiones moviles.
 - [x] Mantener carga diferida (`loading="lazy"`) para las imagenes secundarias.
 - [x] Normalizar la proporcion visible de las imagenes para alinear las
   tarjetas en las filas.
+- [x] Unificar la altura responsive de todas las imagenes, incluida la tarjeta
+  destacada, para evitar composiciones desalineadas.
 - [ ] Generar versiones WebP o AVIF manteniendo una alternativa JPEG.
 - [ ] Generar varias resoluciones y declararlas mediante `srcset` y `sizes`.
 - [ ] Comprimir las imagenes y verificar el peso total transferido desde las
