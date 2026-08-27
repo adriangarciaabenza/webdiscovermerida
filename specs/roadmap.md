@@ -237,6 +237,8 @@ de visita, especialmente en conexiones moviles.
   tarjetas en las filas.
 - [x] Unificar la altura responsive de todas las imagenes, incluida la tarjeta
   destacada, para evitar composiciones desalineadas.
+- [x] Separar visualmente la caja de imagen y la caja de texto para impedir que
+  una imagen tape el contenido de la tarjeta.
 - [ ] Generar versiones WebP o AVIF manteniendo una alternativa JPEG.
 - [ ] Generar varias resoluciones y declararlas mediante `srcset` y `sizes`.
 - [ ] Comprimir las imagenes y verificar el peso total transferido desde las
