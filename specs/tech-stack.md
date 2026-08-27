@@ -14,7 +14,7 @@
 ## Estructura prevista
 
 ```text
-HelloWorld2/
+WebDiscoverMerida/
   app.py
   requirements.txt
   README.md

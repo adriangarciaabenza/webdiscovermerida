@@ -1,4 +1,4 @@
-# Roadmap de HelloWorld2
+# Roadmap de WebDiscoverMerida
 
 ## Fase 1: Especificacion
 
@@ -32,7 +32,7 @@ Cada fase de implementacion seguira este ciclo:
 2. Especificar el contexto, los archivos que puede tocar y el criterio de
    aceptacion.
 3. Delegar la tarea al subagente `local-worker` con el modelo local mediante
-   `opencode run --agent local-worker "<tarea>"` desde `HelloWorld2/`.
+   `opencode run --agent local-worker "<tarea>"` desde `WebDiscoverMerida/`.
 4. Revisar los cambios producidos y pedir correcciones si es necesario.
 5. Ejecutar las pruebas relevantes antes de continuar.
 
@@ -119,7 +119,7 @@ revisara el diff y ejecutara los tests indicados antes de aceptar la tarea.
 
 Las tareas 1 y 2 deben completarse antes de crear la plantilla. La tarea 4
 depende de la ruta y la tarea 6 debe ejecutarse despues de terminar las tareas
-2 a 5. Tras cada delegacion se usara el siguiente flujo desde `HelloWorld2/`:
+2 a 5. Tras cada delegacion se usara el siguiente flujo desde `WebDiscoverMerida/`:
 
 ```bash
 opencode run --agent local-worker "<tarea pequena con archivos y aceptacion>"
@@ -166,14 +166,14 @@ principales lugares que ver y visitar en la ciudad.
 
 ### Tareas pequeñas y delegables
 
-1. **Investigar y aprobar el contenido turistico** [ ]
+1. **Investigar y aprobar el contenido turistico** [x]
    - Archivo permitido: `specs/merida-visit-content.md`.
    - Documentar una descripcion breve y verificable de cada lugar, junto con la
      fuente consultada y el alcance de la informacion.
    - Aceptacion: el contenido diferencia hechos historicos de recomendaciones y
      no incluye horarios, precios o promesas no verificadas.
 
-2. **Preparar las imagenes locales** [ ]
+2. **Preparar las imagenes locales** [x]
    - Archivos permitidos: `static/images/` y, si fuera necesario,
      `specs/merida-visit-content.md`.
    - Incorporar imagenes optimizadas, con nombres descriptivos y licencia o
@@ -181,20 +181,20 @@ principales lugares que ver y visitar en la ciudad.
    - Aceptacion: todas las imagenes se cargan desde el proyecto, tienen un
      formato razonable para web y cuentan con texto alternativo previsto.
 
-3. **Ampliar la plantilla de Mérida** [ ]
+3. **Ampliar la plantilla de Mérida** [x]
    - Archivo permitido: `templates/merida.html`.
    - Añadir una seccion de lugares destacados con imagen, nombre y descripcion.
    - Aceptacion: la informacion es visible, escaneable y conserva el contenido
      historico ya aprobado.
 
-4. **Adaptar los estilos y la accesibilidad** [ ]
+4. **Adaptar los estilos y la accesibilidad** [x]
    - Archivo permitido: `static/styles.css`.
    - Crear una composicion responsive para la imagen principal y las tarjetas o
      bloques informativos, sin romper la pagina existente.
    - Aceptacion: el contenido se puede leer y recorrer en movil, las imagenes no
      desbordan su contenedor y los enlaces mantienen estados de foco visibles.
 
-5. **Actualizar pruebas y documentacion** [ ]
+5. **Actualizar pruebas y documentacion** [x]
    - Archivos permitidos: `tests/test_app.py` o nuevos tests dentro de `tests/`,
      y `README.md`.
    - Verificar que `/merida` mantiene el contexto historico, incluye los lugares

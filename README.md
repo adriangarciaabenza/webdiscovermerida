@@ -1,7 +1,7 @@
-# HelloWorld2
+# WebDiscoverMerida
 
 Aplicacion web minima en Flask que muestra `Hello, World!` y permite descubrir
-Mérida y su legado romano.
+Mérida, su legado romano y cinco lugares para visitar.
 
 ## Requisitos
 
@@ -9,7 +9,7 @@ Mérida y su legado romano.
 
 ## Instalacion y ejecucion con uv
 
-Ejecuta los comandos desde el directorio `HelloWorld2`:
+Ejecuta los comandos desde el directorio `WebDiscoverMerida`:
 
 ```bash
 uv venv .venv
@@ -51,8 +51,8 @@ Con el entorno virtual activado, ejecuta:
 .venv/bin/python -m pytest
 ```
 
-El archivo `tests/test_app.py` verifica que `GET /` devuelve HTTP 200 y contiene
-`Hello, World!` en la respuesta.
+El archivo `tests/test_app.py` verifica las rutas `/` y `/merida`, el enlace de
+navegacion, los lugares destacados y las imagenes locales.
 
 ## Estructura y alcance
 
@@ -61,6 +61,10 @@ El archivo `tests/test_app.py` verifica que `GET /` devuelve HTTP 200 y contiene
 - `templates/merida.html`: pagina informativa sobre Mérida y su legado romano.
 - `static/styles.css`: estilos de la pagina.
 - `specs/merida-content.md`: contenido historico aprobado para la feature.
+- `specs/merida-visit-content.md`: contenido turistico, fuentes y licencia de
+  las ilustraciones.
+- `static/images/`: fotografias locales con licencia Creative Commons y sus
+  atribuciones documentadas en `specs/merida-visit-content.md`.
 - `requirements.txt`: dependencias fijadas de Flask y pytest.
 - `specs/`: documentos de constitucion, stack tecnologico y roadmap.
 

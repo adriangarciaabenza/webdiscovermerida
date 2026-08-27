@@ -7,11 +7,61 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
   <body>
-    <main class="content">
-      <h1>Descubre Mérida</h1>
-      <p>Mérida es la capital de Extremadura y conserva uno de los conjuntos arqueológicos romanos más importantes de la península ibérica.</p>
-      <p>Los romanos fundaron Augusta Emerita en el año 25 a. C. para establecer a veteranos del ejército. La ciudad fue capital de la provincia de Lusitania y contó con edificios y obras públicas como el teatro, el anfiteatro, el puente romano y varios acueductos.</p>
-      <a href="{{ url_for('index') }}">Volver al inicio</a>
+    <main class="content merida-page">
+      <header class="merida-hero">
+        <img src="{{ url_for('static', filename='images/merida-hero.jpg') }}" alt="Puente Romano de Mérida sobre el río Guadiana">
+        <div class="hero-copy">
+          <p class="eyebrow">Extremadura · Patrimonio vivo</p>
+          <h1>Descubre Mérida</h1>
+          <p class="hero-intro">Una ciudad para caminar entre teatros, puentes y museos que cuentan la historia de Augusta Emerita.</p>
+        </div>
+      </header>
+
+      <section class="intro" aria-labelledby="historia-title">
+        <p class="eyebrow">Una mirada atrás</p>
+        <h2 id="historia-title">La huella romana sigue aquí</h2>
+        <p>Mérida es la capital de Extremadura y conserva uno de los conjuntos arqueológicos romanos más importantes de la península ibérica.</p>
+        <p>Los romanos fundaron Augusta Emerita en el año 25 a. C. para establecer a veteranos del ejército. La ciudad fue capital de la provincia de Lusitania y contó con edificios y obras públicas como el teatro, el anfiteatro, el puente romano y varios acueductos.</p>
+      </section>
+
+      <section aria-labelledby="visita-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Tu recorrido</p>
+            <h2 id="visita-title">Qué ver y visitar</h2>
+          </div>
+          <p class="section-note">Cinco paradas para empezar a descubrir la ciudad.</p>
+        </div>
+        <div class="places-grid">
+          <article class="place-card place-card-wide">
+            <img src="{{ url_for('static', filename='images/teatro-romano.jpg') }}" alt="Teatro Romano de Mérida" loading="lazy">
+            <div><p class="place-number">01 · Escena</p><h3>Teatro Romano</h3><p>Un espacio escénico romano que todavía acoge representaciones y forma parte del conjunto arqueológico.</p></div>
+          </article>
+          <article class="place-card">
+            <img src="{{ url_for('static', filename='images/anfiteatro-romano.jpg') }}" alt="Anfiteatro Romano de Mérida" loading="lazy">
+            <div><p class="place-number">02 · Espectáculo</p><h3>Anfiteatro Romano</h3><p>Recinto para espectáculos públicos, junto al teatro, que ayuda a imaginar la vida urbana de la antigua ciudad.</p></div>
+          </article>
+          <article class="place-card">
+            <img src="{{ url_for('static', filename='images/puente-romano.jpg') }}" alt="Puente Romano de Mérida sobre el río Guadiana" loading="lazy">
+            <div><p class="place-number">03 · Camino</p><h3>Puente Romano</h3><p>Una gran infraestructura sobre el Guadiana que revela la importancia de las comunicaciones de Augusta Emerita.</p></div>
+          </article>
+          <article class="place-card">
+            <img src="{{ url_for('static', filename='images/acueducto-milagros.jpg') }}" alt="Acueducto de los Milagros de Mérida" loading="lazy">
+            <div><p class="place-number">04 · Agua</p><h3>Acueducto de los Milagros</h3><p>Sus arcadas de ladrillo y granito son uno de los perfiles más reconocibles del legado hidráulico romano.</p></div>
+          </article>
+          <article class="place-card">
+            <img src="{{ url_for('static', filename='images/museo-arte-romano.jpg') }}" alt="Exterior del Museo Nacional de Arte Romano" loading="lazy">
+            <div><p class="place-number">05 · Colección</p><h3>Museo Nacional de Arte Romano</h3><p>Un museo para conocer y contextualizar las piezas vinculadas a la ciudad romana y su territorio.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="visit-note">
+        <strong>Antes de ir</strong>
+        <p>Consulta en las fuentes oficiales los horarios, tarifas, accesibilidad y posibles cierres temporales.</p>
+      </aside>
+
+      <a class="back-link" href="{{ url_for('index') }}">← Volver al inicio</a>
     </main>
   </body>
 </html>

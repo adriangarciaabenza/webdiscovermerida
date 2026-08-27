@@ -1,4 +1,4 @@
-# Constitucion de HelloWorld2
+# Constitucion de WebDiscoverMerida
 
 **Version:** 1.1  
 **Estado:** propuesta inicial
