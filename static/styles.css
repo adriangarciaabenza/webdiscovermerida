@@ -130,10 +130,10 @@ p {
 .places-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .place-card { overflow: hidden; border: 1px solid #e7dbc7; border-radius: 0.5rem; background: #fff; }
 .place-card-wide { grid-column: span 2; display: grid; grid-template-columns: 1.1fr 1fr; }
-.place-card-link { display: block; height: 100%; margin-top: 0 !important; color: inherit !important; text-decoration: none; }
+.place-card-link { display: block !important; height: 100%; margin-top: 0 !important; color: inherit !important; cursor: pointer; pointer-events: auto; text-decoration: none; }
 .place-card-link:hover h3,
 .place-card-link:focus-visible h3 { color: #b85e49; }
-.place-card-wide .place-card-link { display: grid; grid-template-columns: 1.1fr 1fr; }
+.place-card-wide .place-card-link { display: grid !important; grid-template-columns: 1.1fr 1fr; }
 .place-card img { display: block; width: 100%; aspect-ratio: 1.6; object-fit: cover; }
 .place-card-wide img { height: 100%; }
 .place-card > div { padding: 1.25rem; }
@@ -174,7 +174,7 @@ p {
 
   .section-heading,
   .place-card-wide,
-  .place-card-wide .place-card-link { display: block; }
+  .place-card-wide .place-card-link { display: block !important; }
   .section-note { margin-top: 0.75rem; }
   .places-grid { grid-template-columns: 1fr; }
   .place-card-wide { grid-column: auto; }
