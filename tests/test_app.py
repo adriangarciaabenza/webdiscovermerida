@@ -55,8 +55,9 @@ def test_merida_page_links_each_place_to_the_official_site():
 
     assert response.status_code == 200
     for url in official_urls:
-        assert response.data.count(url) == 1
-    assert response.data.count(b'target="_blank"') == 5
-    assert response.data.count(b'rel="noopener noreferrer"') == 5
+        assert response.data.count(url) == 2
+    assert response.data.count(b'target="_blank"') == 10
+    assert response.data.count(b'rel="noopener noreferrer"') == 10
     assert response.data.count(b'class="place-card-link"') == 5
     assert response.data.count(b'class="place-card-link"') == response.data.count(b"<img ") - 1
+    assert response.data.count(b'class="place-title-link"') == 5
