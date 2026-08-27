@@ -233,6 +233,8 @@ de visita, especialmente en conexiones moviles.
 - [x] Usar `decoding="async"` en las imagenes y prioridad alta para la imagen
   principal.
 - [x] Mantener carga diferida (`loading="lazy"`) para las imagenes secundarias.
+- [x] Normalizar la proporcion visible de las imagenes para alinear las
+  tarjetas en las filas.
 - [ ] Generar versiones WebP o AVIF manteniendo una alternativa JPEG.
 - [ ] Generar varias resoluciones y declararlas mediante `srcset` y `sizes`.
 - [ ] Comprimir las imagenes y verificar el peso total transferido desde las
@@ -274,34 +276,34 @@ dependencia para que WebDiscoverMerida funcione.
 
 ### Tareas pequeñas y delegables
 
-1. **Investigar y aprobar los destinos** [ ]
+1. **Investigar y aprobar los destinos** [x]
    - Archivo permitido: `specs/merida-visit-content.md`.
    - Identificar una URL oficial para el Teatro Romano, Anfiteatro Romano,
      Puente Romano, Acueducto de los Milagros y Museo Nacional de Arte Romano.
    - Aceptacion: cada destino tiene fuente, fecha de comprobacion y una
      alternativa oficial razonable si la URL principal cambia.
 
-2. **Definir los datos de enlace** [ ]
+2. **Definir los datos de enlace** [x]
    - Archivos permitidos: `app.py` y/o `templates/merida.html`.
    - Elegir la representacion mas pequeña y legible para asociar cada lugar con
      su URL, sin introducir una capa innecesaria.
    - Aceptacion: los cinco lugares tienen una asociacion inequívoca y no se
      mezclan URLs con el texto editorial.
 
-3. **Convertir las tarjetas en enlaces accesibles** [ ]
+3. **Convertir las tarjetas en enlaces accesibles** [x]
    - Archivo permitido: `templates/merida.html`.
    - Envolver la imagen y el nombre de cada tarjeta en su enlace oficial.
    - Aceptacion: pulsar cualquiera de las cinco imagenes abre el destino
      correcto en una pestaña nueva y el enlace es usable solo con teclado.
 
-4. **Adaptar los estilos** [ ]
+4. **Adaptar los estilos** [x]
    - Archivo permitido: `static/styles.css`.
    - Mantener la composición actual y añadir señales visuales de que las
      tarjetas son interactivas, sin perder el foco visible.
    - Aceptacion: no aparecen subrayados o contrastes que dificulten la lectura,
      y el diseño sigue siendo correcto en movil.
 
-5. **Añadir pruebas y documentación** [ ]
+5. **Añadir pruebas y documentación** [x]
    - Archivos permitidos: `tests/test_app.py` o nuevos tests dentro de `tests/`,
      `README.md` y `specs/merida-visit-content.md`.
    - Verificar las cinco URLs, sus atributos de seguridad y que se mantienen
