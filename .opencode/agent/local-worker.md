@@ -1,6 +1,6 @@
 ---
 description: Implementa tareas pequenas y verificables usando el modelo local.
-mode: subagent
+mode: all
 model: lmstudio/google/gemma-4-e4b
 permission:
   edit: allow

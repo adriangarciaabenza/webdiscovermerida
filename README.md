@@ -1,6 +1,7 @@
 # HelloWorld2
 
-Aplicacion web minima en Flask que muestra `Hello, World!` en el navegador.
+Aplicacion web minima en Flask que muestra `Hello, World!` y permite descubrir
+Mérida y su legado romano.
 
 ## Requisitos
 
@@ -18,7 +19,7 @@ flask --app app run
 ```
 
 Abre http://127.0.0.1:5000/ en el navegador. El servidor sirve la ruta `/` y
-renderiza la pagina de bienvenida.
+renderiza la pagina de bienvenida. El enlace `Descubre Mérida` lleva a `/merida`.
 
 Como alternativa, puedes crear y preparar el entorno con Python y pip:
 
@@ -57,11 +58,13 @@ El archivo `tests/test_app.py` verifica que `GET /` devuelve HTTP 200 y contiene
 
 - `app.py`: crea la aplicacion Flask y define la ruta `/`.
 - `templates/index.html`: plantilla de la pagina principal.
+- `templates/merida.html`: pagina informativa sobre Mérida y su legado romano.
 - `static/styles.css`: estilos de la pagina.
+- `specs/merida-content.md`: contenido historico aprobado para la feature.
 - `requirements.txt`: dependencias fijadas de Flask y pytest.
 - `specs/`: documentos de constitucion, stack tecnologico y roadmap.
 
-El alcance es una unica pagina ejecutada localmente. No incluye base de datos,
+El alcance son dos paginas ejecutadas localmente. No incluye base de datos,
 autenticacion, API adicional ni persistencia.
 
 ## Especificaciones
