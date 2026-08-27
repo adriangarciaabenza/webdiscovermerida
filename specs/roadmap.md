@@ -216,4 +216,108 @@ final se ejecutara:
 ## Fuera de alcance
 
 Base de datos, autenticacion, despliegue cloud, internacionalizacion,
-persistencia y funcionalidades interactivas.
+persistencia y funcionalidades interactivas complejas.
+
+## Fase 7: Rendimiento de imágenes
+
+### Objetivo
+
+Mejorar la velocidad percibida y reducir el coste de transferencia de la pagina
+de visita, especialmente en conexiones moviles.
+
+### Tareas
+
+- [x] Servir los recursos estaticos con una politica de cache de larga duracion.
+- [x] Declarar las dimensiones de las imagenes para reservar su espacio durante
+  la carga.
+- [x] Usar `decoding="async"` en las imagenes y prioridad alta para la imagen
+  principal.
+- [x] Mantener carga diferida (`loading="lazy"`) para las imagenes secundarias.
+- [ ] Generar versiones WebP o AVIF manteniendo una alternativa JPEG.
+- [ ] Generar varias resoluciones y declararlas mediante `srcset` y `sizes`.
+- [ ] Comprimir las imagenes y verificar el peso total transferido desde las
+  herramientas de red del navegador.
+
+### Aceptacion
+
+La pagina no presenta saltos de diseño mientras carga, la imagen hero comienza
+a cargarse con prioridad y las imagenes secundarias no bloquean la primera
+pintura. Las versiones optimizadas conservan texto alternativo, atribuciones y
+una calidad visual suficiente en escritorio y movil.
+
+## Fase 8: Feature "Enlaces a monumentos"
+
+### Objetivo
+
+Permitir que al pulsar la imagen o el contenido de cada lugar destacado el
+usuario acceda a la pagina oficial correspondiente del monumento o institucion.
+Los enlaces seran informativos y no convertiran esas webs externas en una
+dependencia para que WebDiscoverMerida funcione.
+
+### Requisitos
+
+- Cada uno de los cinco lugares destacados tendra un unico enlace claramente
+  identificable que envuelva su imagen y nombre.
+- Las URLs se investigaran y aprobaran usando paginas oficiales del Consorcio,
+  Turismo de Mérida o la institucion responsable; no se usaran URLs inventadas
+  ni enlaces de terceros como destino principal.
+- Los enlaces externos se abriran en una pestaña nueva con
+  `target="_blank"` y `rel="noopener noreferrer"`.
+- El texto alternativo de cada imagen seguira describiendo la imagen, y el
+  nombre del monumento seguira siendo accesible como texto visible.
+- El enlace tendra estados de foco y hover visibles y funcionara con teclado,
+  raton y dispositivos tactiles.
+- La pagina seguira funcionando si una web externa esta temporalmente caida;
+  no se añadiran APIs, JavaScript, base de datos ni autenticacion.
+- Las URLs aprobadas y su fecha de comprobacion quedaran documentadas en
+  `specs/merida-visit-content.md`.
+
+### Tareas pequeñas y delegables
+
+1. **Investigar y aprobar los destinos** [ ]
+   - Archivo permitido: `specs/merida-visit-content.md`.
+   - Identificar una URL oficial para el Teatro Romano, Anfiteatro Romano,
+     Puente Romano, Acueducto de los Milagros y Museo Nacional de Arte Romano.
+   - Aceptacion: cada destino tiene fuente, fecha de comprobacion y una
+     alternativa oficial razonable si la URL principal cambia.
+
+2. **Definir los datos de enlace** [ ]
+   - Archivos permitidos: `app.py` y/o `templates/merida.html`.
+   - Elegir la representacion mas pequeña y legible para asociar cada lugar con
+     su URL, sin introducir una capa innecesaria.
+   - Aceptacion: los cinco lugares tienen una asociacion inequívoca y no se
+     mezclan URLs con el texto editorial.
+
+3. **Convertir las tarjetas en enlaces accesibles** [ ]
+   - Archivo permitido: `templates/merida.html`.
+   - Envolver la imagen y el nombre de cada tarjeta en su enlace oficial.
+   - Aceptacion: pulsar cualquiera de las cinco imagenes abre el destino
+     correcto en una pestaña nueva y el enlace es usable solo con teclado.
+
+4. **Adaptar los estilos** [ ]
+   - Archivo permitido: `static/styles.css`.
+   - Mantener la composición actual y añadir señales visuales de que las
+     tarjetas son interactivas, sin perder el foco visible.
+   - Aceptacion: no aparecen subrayados o contrastes que dificulten la lectura,
+     y el diseño sigue siendo correcto en movil.
+
+5. **Añadir pruebas y documentación** [ ]
+   - Archivos permitidos: `tests/test_app.py` o nuevos tests dentro de `tests/`,
+     `README.md` y `specs/merida-visit-content.md`.
+   - Verificar las cinco URLs, sus atributos de seguridad y que se mantienen
+     las rutas, imágenes y textos existentes.
+   - Aceptacion: todos los tests pasan con Flask test client y la documentación
+     explica que los destinos son enlaces externos oficiales.
+
+### Orden y verificacion
+
+La tarea 1 debe completarse antes de modificar la plantilla. La tarea 2 se
+revisara antes de implementar la tarea 3. La tarea 5 se ejecutara al final y
+debera comprobar como minimo:
+
+```bash
+.venv/bin/python -m pytest
+```
+
+La feature no se considerara terminada hasta revisar manualmente los cinco
+destinos en un navegador y comprobar el foco de teclado en cada tarjeta.
